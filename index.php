@@ -26,7 +26,11 @@ require_once './db.php';
  
 <body>
 
-    <div class="container pt-4">
+    <?php
+    include './partials/navbar.php';
+    ?>
+
+    <div class="container pt-5 mt-5">
 
         <table class="table text-center">
 
@@ -53,8 +57,8 @@ require_once './db.php';
                     <td><?= $singleMovie->title ?></td>
                     <td><?= $singleMovie->getLengthString() ?></td>
                     <td><?= $singleMovie->director ?></td>
-                    <td><?= implode(", ", $singleMovie->cast) ?></td>
-                    <td><?= implode(", ", $singleMovie->category) ?></td>
+                    <td><?= implode(",<br/>", $singleMovie->cast) ?></td>
+                    <td><?= implode(",<br/>", $singleMovie->category) ?></td>
                     <td><?= $singleMovie->nationality ?></td>
                     <td><?= $singleMovie->language ?></td>
                     <td><?= $singleMovie->productionYear ?></td>
@@ -69,9 +73,14 @@ require_once './db.php';
             </tbody>
     
         </table>
+
+
         
     </div>
     
+    <?php 
+    include './partials/footer.php';
+    ?>
 
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
